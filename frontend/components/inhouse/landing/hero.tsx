@@ -36,7 +36,7 @@ export function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-12 border-t border-gray-700">
+        {/* <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-12 border-t border-gray-700">
           <div>
             <p className="text-3xl sm:text-4xl font-bold text-purple-400">10K+</p>
             <p className="text-gray-400 mt-2">Active Users</p>
@@ -49,7 +49,7 @@ export function Hero() {
             <p className="text-3xl sm:text-4xl font-bold text-purple-400">1M+</p>
             <p className="text-gray-400 mt-2">Questions Answered</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

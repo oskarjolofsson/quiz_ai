@@ -27,22 +27,7 @@ const testimonials: Testimonial[] = [
     rating: 5,
     avatar: 'JC',
   },
-  {
-    id: 3,
-    name: 'Emily Rodriguez',
-    role: 'Software Engineer',
-    content: 'I use Quiz AI to prepare for technical interviews. The question variety and difficulty progression are exactly what I needed.',
-    rating: 5,
-    avatar: 'ER',
-  },
-  {
-    id: 4,
-    name: 'Michael Kumar',
-    role: 'MBA Student',
-    content: 'The analytics dashboard gives me insights into my learning patterns. I can see exactly where I need to focus more effort.',
-    rating: 5,
-    avatar: 'MK',
-  },
+  
 ];
 
 export function Testimonials() {

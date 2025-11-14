@@ -1,49 +1,32 @@
 import { Card } from '@/components/ui/card';
-import { CheckCircle2 } from 'lucide-react';
+import { ReactNode } from 'react';
+import { BookCopy, ChartColumn, CheckCircle2, TrendingUp } from 'lucide-react';
 
 interface Feature {
   id: number;
   title: string;
   description: string;
-  icon: string;
+  icon: ReactNode;
 }
 
 const features: Feature[] = [
   {
     id: 1,
-    title: 'AI-Powered Generation',
-    description: 'Generate unlimited quiz questions from any topic using advanced AI. Get diverse, high-quality questions in seconds.',
-    icon: '🤖',
+    title: 'Powered Generation',
+    description: 'Feed in your study material and let our advanced AI create customized quizzes that target your learning needs.',
+    icon: <BookCopy />,
   },
   {
     id: 2,
     title: 'Personalized Learning Paths',
-    description: 'Adaptive quizzes that adjust difficulty based on your performance. Learn at your own pace with intelligent progression.',
-    icon: '📊',
+    description: 'Tailor your study experience with adaptive quizzes that evolve based on your performance and progress.',
+    icon: <ChartColumn />,
   },
   {
     id: 3,
     title: 'Comprehensive Analytics',
     description: 'Track your progress with detailed insights. Identify weak areas and focus your study time effectively.',
-    icon: '📈',
-  },
-  {
-    id: 4,
-    title: 'Multiple Formats',
-    description: 'Multiple choice, true/false, fill-in-the-blank, and more. Practice with the question types you\'ll encounter in real exams.',
-    icon: '✏️',
-  },
-  {
-    id: 5,
-    title: 'Spaced Repetition',
-    description: 'Leverage scientifically-proven spaced repetition algorithm. Maximize retention with optimized review schedules.',
-    icon: '🔄',
-  },
-  {
-    id: 6,
-    title: 'Offline Access',
-    description: 'Download your decks and study anywhere, anytime. No internet connection required to keep learning.',
-    icon: '📱',
+    icon: <TrendingUp />,
   },
 ];
 
