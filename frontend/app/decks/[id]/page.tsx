@@ -20,7 +20,6 @@ export default function DeckPage({
   ];
 
   const [index, setIndex] = useState(0);
-  const [flipped, setFlipped] = useState(false);
   const [answer, setAnswer] = useState("");
 
   const current = cards[index];
@@ -29,7 +28,6 @@ export default function DeckPage({
     const handler = (e: KeyboardEvent) => {
       if (e.code === "Space") {
         e.preventDefault();
-        setFlipped((v) => !v);
       }
     };
     window.addEventListener("keydown", handler);
@@ -37,7 +35,6 @@ export default function DeckPage({
   }, []);
 
   const nextCard = () => {
-    setFlipped(false);
     setAnswer("");
     if (index < cards.length - 1) setIndex(index + 1);
   };

@@ -6,6 +6,7 @@ import {
   Layers,
   PenTool,
   Settings as SettingsIcon,
+  Plus,
 } from "lucide-react";
 
 export default function SideBar() {
@@ -65,7 +66,12 @@ export default function SideBar() {
 
         <Separator className="my-6" />
 
-        <Button className="w-full">Create New Deck</Button>
+        <Button className="w-full">
+          <Link href="/create" className="flex items-center">
+            Create New Deck
+            <Plus className="h-4 w-4" />
+          </Link>
+        </Button>
       </div>
     </aside>
   );
