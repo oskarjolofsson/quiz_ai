@@ -112,6 +112,39 @@
   --sidebar-ring: oklch(0.553 0.013 58.071);
 }
 
+/* Landing layout theme: scoped color system matching provided palette
+   - Apply the class `landing-theme` to a top-level wrapper (the layout component)
+   - These variables map to the theme system used elsewhere in the project
+*/
+.landing-theme {
+  /* Background: 240° 10% 10% - Dark blue-gray base */
+  --background: hsl(240 10% 10%);
+
+  /* Foreground: near-white text */
+  --foreground: hsl(0 0% 95%);
+
+  /* Card: slightly lighter than background */
+  --card: hsl(240 8% 14%);
+  --card-foreground: var(--foreground);
+
+  /* Primary / Accent: vibrant purple */
+  --primary: #9f7aea;
+  --accent: #9f7aea;
+  --primary-foreground: var(--foreground);
+
+  /* Secondary: muted gray-blue */
+  --secondary: hsl(240 6% 22%);
+  --secondary-foreground: var(--foreground);
+
+  /* Border / Input */
+  --border: hsl(240 8% 25%);
+  --input: hsl(240 8% 25%);
+
+  /* Muted text */
+  --muted: hsl(240 5% 70%);
+  --muted-foreground: var(--muted);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
