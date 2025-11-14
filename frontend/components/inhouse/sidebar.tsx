@@ -9,7 +9,7 @@ export default function SideBar() {
       style={{ borderColor: "var(--border)" }}
     >
       <div className="px-4 py-6">
-        <h2 className="text-xl font-semibold mb-4">Menu</h2>
+        <h2 className="text-xl font-semibold mb-4">Quiz AI</h2>
 
         <nav className="flex flex-col gap-2">
           <Link href="/home" className="hover:underline">
