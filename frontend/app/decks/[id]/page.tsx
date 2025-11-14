@@ -3,8 +3,8 @@
 import { useState, useEffect, use } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import SideBar from "@/components/inhouse/sidebar";
-import FlashCard from "@/components/inhouse/flashcard";
+import SideBar from "@/components/inhouse/layouts/sidebar";
+import FlashCard from "@/components/inhouse/decks/flashcard";
 
 export default function DeckPage({
   params,
