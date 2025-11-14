@@ -4,7 +4,9 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import SideBar from "@/components/inhouse/sidebar";
+import SideBar from "@/components/inhouse/layouts/sidebar";
+import { Plus } from "lucide-react";
+import CreateDeckButton from "@/components/inhouse/home/createDeckButton";
 
 export default function HomePage() {
   return (
@@ -18,7 +20,10 @@ export default function HomePage() {
       <SideBar />
 
       <main className="flex-1 p-10">
-        <h1 className="text-3xl font-bold mb-6">Your Card Decks</h1>
+        <div className="flex items-center mb-6 justify-between">
+          <h1 className="text-3xl font-bold">Your Card Decks</h1>
+          <CreateDeckButton />
+        </div>
 
         <ScrollArea className="h-[calc(100vh-150px)]">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
