@@ -1,6 +1,7 @@
 "use client";
 
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import SideBar from "@/components/inhouse/sidebar";
@@ -16,7 +17,6 @@ export default function HomePage() {
     >
       <SideBar />
 
-      {/* MAIN CONTENT */}
       <main className="flex-1 p-10">
         <h1 className="text-3xl font-bold mb-6">Your Card Decks</h1>
 
@@ -31,20 +31,22 @@ export default function HomePage() {
                   color: "var(--card-foreground)",
                 }}
               >
-                <CardHeader>
-                  <CardTitle>Deck #{n}</CardTitle>
-                </CardHeader>
+                <Link href={`/decks/${n}`}>
+                  <CardHeader>
+                    <CardTitle>Deck #{n}</CardTitle>
+                  </CardHeader>
 
-                <CardContent className="flex flex-col gap-4">
-                  <p
-                    className="text-sm"
-                    style={{ color: "var(--muted-foreground)" }}
-                  >
-                    40 flashcards · Last practiced 2 days ago
-                  </p>
+                  <CardContent className="flex flex-col gap-4">
+                    <p
+                      className="text-sm"
+                      style={{ color: "var(--muted-foreground)" }}
+                    >
+                      40 flashcards · Last practiced 2 days ago
+                    </p>
 
-                  <Button className="w-full">Practice</Button>
-                </CardContent>
+                    <Button className="w-full">Practice</Button>
+                  </CardContent>
+                </Link>
               </Card>
             ))}
           </div>

@@ -12,10 +12,10 @@ export default function SideBar() {
         <h2 className="text-xl font-semibold mb-4">Menu</h2>
 
         <nav className="flex flex-col gap-2">
-          <Link href="#" className="hover:underline">
+          <Link href="/home" className="hover:underline">
             Dashboard
           </Link>
-          <Link href="#" className="hover:underline">
+          <Link href="/home" className="hover:underline">
             My Decks
           </Link>
           <Link href="#" className="hover:underline">
