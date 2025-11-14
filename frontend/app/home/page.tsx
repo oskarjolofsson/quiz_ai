@@ -49,7 +49,7 @@ export default function HomePage() {
                       40 flashcards · Last practiced 2 days ago
                     </p>
 
-                    <Button className="w-full">Practice</Button>
+                    <Button className="w-full rounded-full">Practice</Button>
                   </CardContent>
                 </Link>
               </Card>

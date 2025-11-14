@@ -65,7 +65,6 @@ export default function CreateDeckPage() {
       <main className="flex-1 p-10">
         <h1 className="text-3xl font-bold mb-6">Create a New Deck</h1>
 
-        {/* Deck name */}
         <div className="max-w-xl mb-10">
           <label className="block mb-2 font-medium">Deck Name</label>
           <Input
@@ -102,7 +101,7 @@ export default function CreateDeckPage() {
 
         {error && <p className="mt-6 text-red-500 font-medium">{error}</p>}
 
-        <Button className="mt-5 px-8" onClick={saveDeck}>
+        <Button className="mt-5 px-8 rounded-full" onClick={saveDeck}>
           Save Deck
         </Button>
       </main>

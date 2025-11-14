@@ -65,7 +65,7 @@ export default function DeckPage({
           />
 
           <Button
-            className="w-full"
+            className="w-full rounded-full"
             onClick={nextCard}
             disabled={index === cards.length - 1}
           >
