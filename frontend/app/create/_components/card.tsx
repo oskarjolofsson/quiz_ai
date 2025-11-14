@@ -25,24 +25,13 @@ type Props = {
 
 export default function Card({ index, card, updateCard, deleteCard }: Props) {
   return (
-    <UICard
-      key={index}
-      className="w-full gap-2"
-      style={{
-        backgroundColor: "var(--card)",
-        color: "var(--card-foreground)",
-        borderColor: "var(--border)",
-      }}
-    >
+    <UICard key={index} className="w-full gap-2">
       <CardHeader className="pb-0 flex items-center justify-between">
         <CardTitle className="text-base flex items-center justify-between">
           <span>Card {index + 1}</span>
         </CardTitle>
         <Trash2
-          className="cursor-pointer"
-          style={{
-            color: "var(--muted)",
-          }}
+          className="cursor-pointer text-muted"
           onClick={() => deleteCard(index)}
         />
       </CardHeader>
@@ -53,9 +42,7 @@ export default function Card({ index, card, updateCard, deleteCard }: Props) {
           <Input
             placeholder="Enter question..."
             value={card.question}
-            style={{
-              borderColor: "var(--primary)",
-            }}
+            className="border-primary"
             onChange={(e) => updateCard(index, "question", e.target.value)}
           />
         </div>
@@ -65,9 +52,7 @@ export default function Card({ index, card, updateCard, deleteCard }: Props) {
           <Input
             placeholder="Enter answer..."
             value={card.answer}
-            style={{
-              borderColor: "var(--primary)",
-            }}
+            className="border-primary"
             onChange={(e) => updateCard(index, "answer", e.target.value)}
           />
         </div>

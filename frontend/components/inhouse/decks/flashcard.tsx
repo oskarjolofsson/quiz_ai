@@ -24,7 +24,6 @@ export default function FlashCard({ frontText, backText }: Props) {
 
   return (
     <div className="flex min-h-[300px] items-center justify-center">
-      {/* perspective wrapper */}
       <div className="h-80 w-126" style={{ perspective: "1200px" }}>
         <div
           className={`

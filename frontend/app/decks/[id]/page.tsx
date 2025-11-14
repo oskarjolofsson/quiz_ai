@@ -40,31 +40,19 @@ export default function DeckPage({
   };
 
   return (
-    <div
-      className="landing-theme flex min-h-screen"
-      style={{
-        backgroundColor: "var(--background)",
-        color: "var(--foreground)",
-      }}
-    >
+    <div className="flex min-h-screen">
       <SideBar />
 
       <main className="flex-1 p-10 flex flex-col items-center">
         <h1 className="text-3xl font-bold mb-2">Deck #{deckId}</h1>
 
-        <p
-          className="text-sm mb-10"
-          style={{ color: "var(--muted-foreground)" }}
-        >
+        <p className="text-sm mb-10 text-muted-foreground">
           Card {index + 1} / {cards.length}
         </p>
 
         <FlashCard frontText={current.front} backText={current.back} />
 
-        <p
-          className="mt-3 text-sm"
-          style={{ color: "var(--muted-foreground)" }}
-        >
+        <p className="mt-3 text-sm text-muted-foreground">
           Press <span className="font-medium">Space</span> to flip the card
         </p>
 
