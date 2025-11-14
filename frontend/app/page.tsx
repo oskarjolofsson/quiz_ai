@@ -1,19 +1,28 @@
 import LandingLayout from "@/components/inhouse/layouts/landingLayout";
+import CTAButton from "@/components/ui/CTAButton";
 
 export default function Home() {
   return (
     <LandingLayout>
-      <h1 className="text-3xl font-bold mb-4">Welcome to QuizAI</h1>
-      <p className="mb-6">
-        QuizAI helps you practice smarter with AI-generated quizzes tailored to your learning needs.
-      </p>
-      <a
-        href="/signup"
-        className="inline-block px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700"
-      >
-        Get Started
-      </a>
-      <></>
+      <div className="text-center max-w-2xl mx-auto px-4 mb-16 mt-16">
+            {/* Header */}
+            <h2 className="text-3xl sm:text-5xl font-bold leading-tight tracking-tight mb-4 text-violet-400">
+                Time to ace your exams with QuizAI
+            </h2>
+
+            {/* Subtitle */}
+            <p className="text-base sm:text-lg text-violet-200 mb-8">
+                Ace your next test with QuizAI's intelligent quiz generator
+            </p>
+
+            {/* CTA Button */}
+            <CTAButton href="/analyse">Try it now — it's free!</CTAButton>
+
+            {/* Small text below CTA */}
+            <p className="text-sm text-slate-400">
+                No credit card required
+            </p>
+        </div>
     </LandingLayout>
   );
 }
