@@ -51,16 +51,3 @@ class UserService(BaseService[Users]):
         """Retrieve all users."""
         return list(Users.objects.all())
     
-    def serialize_user(self, user: Users) -> dict:
-        """Serialize a single user to dictionary."""
-        return {
-            "id": user.id,
-            "username": user.username,
-            "name": user.name,
-            "email": user.email,
-            "date_joined": user.date_joined.isoformat(),
-        }
-        
-    def serialize_users(self, users: List[Users]) -> List[dict]:
-        """Serialize multiple users to list of dictionaries."""
-        return [self.serialize_user(user) for user in users]

@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, List
 from api.models import Collection
 from .base_table_service import BaseService
 
@@ -29,3 +29,7 @@ class CollectionService(BaseService[Collection]):
         self._set_attributes(collection, **kwargs)
         self._save_record(collection)
         return collection
+    
+    def get_all_by_user(self, user_id: int) -> List[Collection]:
+        """Retrieve all collections for a given user ID."""
+        return list(Collection.objects.filter(user__id=user_id))

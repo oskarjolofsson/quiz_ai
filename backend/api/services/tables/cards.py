@@ -1,5 +1,6 @@
-from typing import Optional
+from typing import Optional, List
 from api.models import Card, Collection
+from api.serializers import CardSerializer
 from .base_table_service import BaseService
 
 
