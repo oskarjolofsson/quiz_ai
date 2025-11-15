@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from rest_framework.views import APIView
-from api.services.auth.users import UserService
+from api.services.tables.users import UserService
 
 # Create your views here.
 
@@ -21,7 +21,7 @@ class UserListView(APIView):
     def get(self, request):
         
         # Execute service
-        users = self.user_service.list_all_users()
+        users = self.user_service.list_all()
         data = self.user_service.serialize_users(users)
         return Response(data)
 
@@ -32,7 +32,7 @@ class UserListView(APIView):
         username = request.data["username"]
         
         # Execute service
-        user = self.user_service.create_user(username=username, name=name, email=email)
+        user = self.user_service.create(username=username, name=name, email=email)
         return Response({"id": user.id})
     
 # Cards
