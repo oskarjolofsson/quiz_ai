@@ -1,35 +1,15 @@
-from typing import Optional, List
-from api.models import Card, Collection
-from api.serializers import CardSerializer
-from .base_table_service import BaseService
+from api.models import Card
 
+class CardService:
+    def get(self, card_id):
+        return Card.objects.get(id=card_id)
 
-class CardService(BaseService[Card]):
-    """Service for managing Card records."""
-    
-    def create(self, collection: Collection, question: str, answer: str, 
-               hint: str = "", example: str = "", order: int = 0) -> Card:
-        """Create a new card."""
-        card = Card(
-            collection=collection,
-            question=question,
-            answer=answer,
-            hint=hint,
-            example=example,
-            order=order
-        )
-        self._save_record(card)
-        return card
-    
-    def get_by_id(self, card_id: int) -> Optional[Card]:
-        """Retrieve a card by ID."""
-        try:
-            return Card.objects.get(id=card_id)
-        except Card.DoesNotExist:
-            return None
-    
-    def update(self, card: Card, **kwargs) -> Card:
-        """Update an existing card."""
-        self._set_attributes(card, **kwargs)
-        self._save_record(card)
-        return card
+    def list_by_collection(self, collection_id):
+        return Card.objects.filter(collection_id=collection_id)
+
+    def create(self, **validated_data):
+        return Card.objects.create(**validated_data)
+
+    def update(self, card_id, **validated_data):
+        Card.objects.filter(id=card_id).update(**validated_data)
+        return self.get(card_id)

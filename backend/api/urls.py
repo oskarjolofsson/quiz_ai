@@ -1,7 +1,17 @@
-from api.views import UserListView, hello
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+
+from api.views.views import hello
+from api.views.userViewSet import UserViewSet
+from api.views.collectionViewSet import CollectionViewSet
+from api.views.cardViewSet import CardViewSet
+
+router = DefaultRouter()
+router.register(r'users', UserViewSet, basename='users')
+router.register(r'collections', CollectionViewSet, basename='collections')
+router.register(r'cards', CardViewSet, basename='cards')
 
 urlpatterns = [
-    path("hello/", hello, name="hello"),
-    path("users/", UserListView.as_view(), name="user-list"),
+    path('', hello, name='hello'),
+    path('', include(router.urls)),
 ]
