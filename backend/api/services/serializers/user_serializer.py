@@ -13,3 +13,5 @@ class UserSerializer:
         """Retrieve and serialize all users."""
         users = self.user_service.list_all()
         return [self.serialize_user(user) for user in users]
+    
+    

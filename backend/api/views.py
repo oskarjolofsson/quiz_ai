@@ -4,9 +4,14 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
 
-from api.serializers.collection_serializer import CollectionSerializer
-from api.serializers.card_serializer import CardSerializer
-from api.serializers.user_serializer import UserSerializer
+from api.services.serializers.collection_serializer import CollectionSerializer
+from api.services.tables.collection import CollectionService
+
+from api.services.serializers.card_serializer import CardSerializer
+from api.services.tables.cards import CardService
+
+from api.services.serializers.user_serializer import UserSerializer
+from api.services.tables.users import UserService
 
 # Create your views here.
 
@@ -20,6 +25,7 @@ class UserListView(APIView):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.user_serializer = UserSerializer()
+        self.user_service = UserService()
     
     def get(self, request):
         
@@ -43,6 +49,7 @@ class CollectionListView(APIView):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.collection_service = CollectionService()
+        self.collection_serializer = CollectionSerializer()
     
     def get(self, request):
         # Return all collections that belong to the user_id in request.user.id
