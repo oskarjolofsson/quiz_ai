@@ -5,6 +5,7 @@ from api.views.views import hello
 from api.views.userViewSet import UserViewSet
 from api.views.collectionViewSet import CollectionViewSet
 from api.views.cardViewSet import CardViewSet
+from api.views.openaiView import CompareAnswerView
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet, basename='users')
@@ -14,4 +15,5 @@ router.register(r'cards', CardViewSet, basename='cards')
 urlpatterns = [
     path('', hello, name='hello'),
     path('', include(router.urls)),
+    path("compare/", CompareAnswerView.as_view(), name="compare-answer"),
 ]

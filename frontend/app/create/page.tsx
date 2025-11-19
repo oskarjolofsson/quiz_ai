@@ -31,7 +31,7 @@ export default function CreateDeckPage() {
     );
   };
 
-  const saveDeck = () => {
+  const saveDeck = async () => {
     if (!deckName.trim()) {
       setError("Please enter a deck name.");
       return;
@@ -49,7 +49,21 @@ export default function CreateDeckPage() {
     setError("");
 
     console.log("Saving deck:", { deckName, cards });
-    // TODO: POST to API
+
+    const res = await fetch(
+      "http://127.0.0.1:8000/api/cards/?collection_id=1",
+      {
+        // Django often requires this:
+        cache: "no-store",
+      }
+    );
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch API");
+    }
+
+    const data = await res.json();
+    console.log(data);
   };
 
   return (

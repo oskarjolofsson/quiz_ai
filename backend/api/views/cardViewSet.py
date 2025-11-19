@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from rest_framework.response import Response
 from api.services.tables.cards import CardService
-from api.services.serializers.card_serializer import CardSerializer
+from api.services.serializers.card_serializer import CardSerializer, CardBulkCreateSerializer
 
 class CardViewSet(viewsets.ViewSet):
 
@@ -19,9 +19,17 @@ class CardViewSet(viewsets.ViewSet):
         return Response(serializer.data)
 
     # POST /cards/
-    def create(self, request):
-        serializer = CardSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
+    def create(self, request):    
+        serializer = CardBulkCreateSerializer(data=request.data)
+        if not serializer.is_valid():
+            print("VALIDATION ERROR:", serializer.errors)
+            return Response(serializer.errors, status=400)
 
-        card = CardService().create(**serializer.validated_data)
-        return Response(CardSerializer(card).data, status=201)
+        serializer.is_valid(raise_exception=True)
+        cards_data = serializer.validated_data["cards"]
+        created_cards = CardService().create_bulk(cards_data)
+
+        return Response(
+            CardSerializer(created_cards, many=True).data,
+            status=201
+        )
