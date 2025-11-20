@@ -24,6 +24,8 @@ class CompareAnswerView(APIView):
         Correct answer: {solution}
 
         Give clear but short feedback about:
+        - start your response with exactly "passed" or "failed" if you think the 
+        answer is close enough to the solution
         - what is correct and what is missing from the solution
         """
 
