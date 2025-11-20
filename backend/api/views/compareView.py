@@ -35,7 +35,4 @@ class CompareAnswerView(APIView):
         )
 
         feedback = response.choices[0].message.content
-
-        print(response)
-
         return Response({"feedback": feedback}, status=200)

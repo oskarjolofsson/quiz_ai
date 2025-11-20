@@ -10,18 +10,6 @@ type Props = {
 export default function FlashCard({ frontText, backText }: Props) {
   const [flipped, setFlipped] = useState(false);
 
-  const handleKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.code === "Space") {
-      e.preventDefault();
-      setFlipped((prev) => !prev);
-    }
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [handleKeyDown]);
-
   return (
     <div className="flex min-h-[300px] items-center justify-center">
       <div className="h-80 w-126" style={{ perspective: "1200px" }}>
